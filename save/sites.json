@@ -1,0 +1,212 @@
+[
+  {
+    "id": 0,
+    "img": {
+      "img_link": "site0",
+      "type_img": "png"
+    },
+    "name": "Сайт посвященный Джеку Лондону, классику мировой приключенческой литературы.",
+    "link": "http://londonjack.ru",
+    "dev": "js"
+  },
+  {
+    "id": 1,
+    "img": {
+      "img_link": "site1",
+      "type_img": "png"
+    },
+    "name": "Lending Page - беспроводных наушников с функцией Bluetooth гарнитурой",
+    "link": "http://air-beats-store.ru",
+    "dev": "js"
+  },
+  {
+    "id": 2,
+    "img": {
+      "img_link": "site2",
+      "type_img": "png"
+    },
+    "name": "Сайт строительной бригады.",
+    "link": "http://stroi-svoi-dom57.ru",
+    "dev": "html"
+  },
+  {
+    "id": 3,
+    "img": {
+      "img_link": "site3",
+      "type_img": "png"
+    },
+    "name": "Магазин товаров для макияжа.",
+    "link": "http://wf-24.ru",
+    "dev": "js"
+  },
+  {
+    "id": 4,
+    "img": {
+      "img_link": "site4",
+      "type_img": "png"
+    },
+    "name": "Команда профессионалов в бухгалтерии и юриспруденции, выручит тебя даже в самой безнадежной ситуации.",
+    "link": "http://finbird.ru",
+    "dev": "js"
+  },
+  {
+    "id": 5,
+    "img": {
+      "img_link": "site5",
+      "type_img": "png"
+    },
+    "name": "Резиновые покрытия, резиновая плитка и резинопол от производителей",
+    "link": "http://safetile.org",
+    "dev": "js"
+  },
+  {
+    "id": 6,
+    "img": {
+      "img_link": "site6",
+      "type_img": "png"
+    },
+    "name": "Повышение квалификации руководителей и специалистов",
+    "link": "http://ohrana-truda.kritery.ru",
+    "dev": "js"
+  },
+  {
+    "id": 7,
+    "img": {
+      "img_link": "site7",
+      "type_img": "png"
+    },
+    "name": "Теплоизоляция и огнезащита воздуховодов и металлических конструкций.",
+    "link": "https://ognepro.ru",
+    "dev": "js"
+  },
+  {
+    "id": 8,
+    "img": {
+      "img_link": "site8",
+      "type_img": "png"
+    },
+    "name": "Сайт визитка массажного салона",
+    "link": "http://forman.kz",
+    "dev": "js"
+  },
+  {
+    "id": 9,
+    "img": {
+      "img_link": "site9",
+      "type_img": "png"
+    },
+    "name": "Визитка бизнес-тренера",
+    "link": "http://kriptainvest.dohodinvesting.ru",
+    "dev": "js"
+  },
+  {
+    "id": 10,
+    "img": {
+      "img_link": "site10",
+      "type_img": "png"
+    },
+    "name": "Организация свадеб",
+    "link": "http://svadba-oskol.ru",
+    "dev": "js"
+  },
+  {
+    "id": 11,
+    "img": {
+      "img_link": "site11",
+      "type_img": "png"
+    },
+    "name": "Сервис мероприятий",
+    "link": "https://zelfi.ru",
+    "dev": "js"
+  },
+  {
+    "id": 12,
+    "img": {
+      "img_link": "site12",
+      "type_img": "png"
+    },
+    "name": "Фирма Геосоюз, которая занимается поставками аппаратно-программных устройств",
+    "link": "http://geosoyuz1.ru",
+    "dev": "wordpress"
+  },
+  {
+    "id": 13,
+    "img": {
+      "img_link": "site13",
+      "type_img": "png"
+    },
+    "name": "Ремонт коммерческих грузовых автомобилей",
+    "link": "https://kamaz58.ru",
+    "dev": "wordpress"
+  },
+  {
+    "id": 14,
+    "img": {
+      "img_link": "site14",
+      "type_img": "png"
+    },
+    "name": "Автошкола №1",
+    "link": "https://avsk1.ru",
+    "dev": "wordpress"
+  },
+  {
+    "id": 15,
+    "img": {
+      "img_link": "site15",
+      "type_img": "png"
+    },
+    "name": "Ставки на спорт",
+    "link": "https://formulafutbola.ru",
+    "dev": "wordpress"
+  },
+  {
+    "id": 16,
+    "img": {
+      "img_link": "site16",
+      "type_img": "png"
+    },
+    "name": "Stronger erections for maximum performance",
+    "link": "https://web-marketing.su/our-works/twiceadayman",
+    "dev": "js"
+  },
+  {
+    "id": 17,
+    "img": {
+      "img_link": "site17",
+      "type_img": "png"
+    },
+    "name": "Red booster",
+    "link": "https://web-marketing.su/our-works/red-booster",
+    "dev": "js"
+  },
+  {
+    "id": 18,
+    "img": {
+      "img_link": "site18",
+      "type_img": "png"
+    },
+    "name": "Интернет магазин одежды",
+    "link": "https://outcastmerch.com",
+    "dev": "js"
+  },
+  {
+    "id": 19,
+    "img": {
+      "img_link": "site19",
+      "type_img": "png"
+    },
+    "name": "Landing page по продаже кружок LEGO",
+    "link": "http://vh68.timeweb.ru/parking/?ref=lego-cup.ru",
+    "dev": "js"
+  },
+  {
+    "id": 21,
+    "img": {
+      "img_link": "site21",
+      "type_img": "png"
+    },
+    "name": "Портфолио..",
+    "link": "http://webinme.ru",
+    "dev": "react"
+  }
+]

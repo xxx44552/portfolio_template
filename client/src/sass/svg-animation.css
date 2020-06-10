@@ -1,0 +1,61 @@
+.MochiShiba path,.MochiPaws path{fill:none;stroke:none;stroke-width:1.2;stroke-miterlimit:10;stroke-linejoin:round;stroke-linecap:round;}
+.MochiShiba .thin{stroke-width:0.8;}
+.MochiShiba #eyes path{stroke-width:2;}
+.MochiShiba .fur,.MochiPaws .fur{fill:#dd9e47;}
+.MochiShiba .fur2{fill:white;}
+.MochiShiba .inner{fill:white;}
+.MochiShiba .outline,.MochiPaws .outline{stroke:#4e2e0f;}
+.MochiShiba .nose,.MochiShiba .eye{fill:#3c2012;}
+.MochiShiba .gleam{fill:white;}
+.MochiShiba #laugh .eye{fill:none;}
+.MochiShiba .tongue{fill:#f2a3ad;}
+.MochiShiba .drool{fill:#41b5dd;}
+.MochiShiba .scarf{fill:#002a57;}
+.MochiShiba .logo{fill:white;}
+.MochiShiba #cheeks .right{fill:url(file:///home/it-kudaev/%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8/untitled.html#cheeks);}
+.MochiShiba #cheeks .left{fill:url(file:///home/it-kudaev/%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8/untitled.html#cheeks-2);}
+.MochiShiba #cheeks{visibility:hidden;}
+.MochiShiba #ears #left1,.MochiShiba #ears #right2,.MochiShiba #ears #left3,.MochiShiba #ears #right3{visibility:hidden;}
+.MochiShiba #eyes #wink,.MochiShiba #eyes #shy,.MochiShiba #eyes #laugh,.MochiShiba #eyes .gleam{visibility:hidden;}
+.MochiShiba #brows #expecting{visibility:hidden;}
+.MochiShiba [id^=mouth]{visibility:hidden;}
+.MochiShiba [id^=mouth1]{visibility:visible;}
+.MochiShiba #base #outline2,.MochiShiba #base #outline3{visibility:hidden;}
+.MochiShiba #base #top2,.MochiShiba #base #top3{visibility:hidden;}
+.MochiShiba.excited [id^=mouth]{visibility:hidden;}
+.MochiShiba.excited #mouth3{visibility:visible;}
+.MochiShiba.ears #ears > g{visibility:hidden;}
+.MochiShiba.ears.l1 #ears > #left1{visibility:visible;}
+.MochiShiba.ears.r2 #ears > #right2{visibility:visible;}
+.MochiShiba.ears #base [id^=outline],.MochiShiba.ears #base [id^=top]{visibility:hidden;}
+.MochiShiba.ears.l1.r2 #base #outline1,.MochiShiba.ears.l1.r2 #base #top2{visibility:visible;}
+.MochiShiba.eyes #eyes .eye{visibility:hidden;}
+.MochiShiba.eyes.open #open .eye.left{visibility:visible;}
+.MochiShiba.eyes.open #open .eye.right{visibility:visible;}
+.MochiBox:hover .paws,.MochiBox:active .paws,.MochiBox:focus .paws{-webkit-animation:paw-pop 0.3s ease 1 both;animation:paw-pop 0.3s ease 1 both;}
+.MochiBox:hover .shiba,.MochiBox:active .shiba,.MochiBox:focus .shiba{-webkit-animation:shiba-pop 1s ease 1 both;animation:shiba-pop 1s ease 1 both;}
+.MochiBox:hover .eyes.open:not(.cheeky):not(.gleam) [id^=mouth],.MochiBox:active .eyes.open:not(.cheeky):not(.gleam) [id^=mouth],.MochiBox:focus .eyes.open:not(.cheeky):not(.gleam) [id^=mouth]{-webkit-animation:shiba-wink-open 10s infinite linear both;animation:shiba-wink-open 10s infinite linear both;}
+.MochiBox:hover .eyes.open:not(.cheeky):not(.gleam) #mouth6,.MochiBox:active .eyes.open:not(.cheeky):not(.gleam) #mouth6,.MochiBox:focus .eyes.open:not(.cheeky):not(.gleam) #mouth6{visibility:visible;-webkit-animation:shiba-wink-closed 10s infinite linear both;animation:shiba-wink-closed 10s infinite linear both;}
+.MochiBox:hover .eyes.open:not(.cheeky):not(.gleam) #open .left,.MochiBox:active .eyes.open:not(.cheeky):not(.gleam) #open .left,.MochiBox:focus .eyes.open:not(.cheeky):not(.gleam) #open .left{-webkit-animation:shiba-wink-open 10s infinite linear both;animation:shiba-wink-open 10s infinite linear both;}
+.MochiBox:hover .eyes.open:not(.cheeky):not(.gleam) #wink .eye.left,.MochiBox:active .eyes.open:not(.cheeky):not(.gleam) #wink .eye.left,.MochiBox:focus .eyes.open:not(.cheeky):not(.gleam) #wink .eye.left{visibility:visible;-webkit-animation:shiba-wink-closed 10s infinite linear both;animation:shiba-wink-closed 10s infinite linear both;}
+.MochiBox{position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:0;}
+.MochiBox .MochiShiba{z-index:0;}
+.MochiBox .MochiPaws{z-index:2;}
+.MochiBox:hover,.MochiBox:active,.MochiBox:focus{outline:none;}
+.MochiBox:hover .MochiContent,.MochiBox:active .MochiContent,.MochiBox:focus .MochiContent{border-color:#5f3d1e;}
+.MochiBox .MochiContent{z-index:1;position:relative;}
+.MochiShiba,.MochiPaws{position:absolute;left:12.5%;top:0;pointer-events:none;width:75%;max-width:200px;}
+.MochiShiba .shiba{width:100%;height:auto;-webkit-transform:translateY(-54%);transform:translateY(-54%);-webkit-animation:shiba-hide 0.5s ease 1 both;animation:shiba-hide 0.5s ease 1 both;-webkit-transform-origin:bottom center;transform-origin:bottom center;}
+.MochiPaws .paws{width:100%;height:auto;position:absolute;left:0;top:40%;-webkit-transform:translateY(-60%);transform:translateY(-60%);-webkit-animation:paw-hide 0.25s ease 1 both;animation:paw-hide 0.25s ease 1 both;}
+@-webkit-keyframes paw-pop{0%{opacity:0;-webkit-transform:translateY(-50%) scale(0.75);transform:translateY(-50%) scale(0.75);}50%{opacity:1;-webkit-transform:translateY(-70%);transform:translateY(-70%);}100%{-webkit-transform:translateY(-60%) scaleY(1);transform:translateY(-60%) scaleY(1);}}
+@keyframes paw-pop{0%{opacity:0;-webkit-transform:translateY(-50%) scale(0.75);transform:translateY(-50%) scale(0.75);}50%{opacity:1;-webkit-transform:translateY(-70%);transform:translateY(-70%);}100%{-webkit-transform:translateY(-60%) scaleY(1);transform:translateY(-60%) scaleY(1);}}
+@-webkit-keyframes shiba-pop{0%{opacity:0;-webkit-transform:translateY(0%) scale(0.5);transform:translateY(0%) scale(0.5);}22%{opacity:1;-webkit-transform:translateY(-25%) scale(0.5);transform:translateY(-25%) scale(0.5);}60%{opacity:1;-webkit-transform:translateY(-64%) scale(1.01);transform:translateY(-64%) scale(1.01);}100%{opacity:1;-webkit-transform:translateY(-54%) scale(1.01);transform:translateY(-54%) scale(1.01);}}
+@keyframes shiba-pop{0%{opacity:0;-webkit-transform:translateY(0%) scale(0.5);transform:translateY(0%) scale(0.5);}22%{opacity:1;-webkit-transform:translateY(-25%) scale(0.5);transform:translateY(-25%) scale(0.5);}60%{opacity:1;-webkit-transform:translateY(-64%) scale(1.01);transform:translateY(-64%) scale(1.01);}100%{opacity:1;-webkit-transform:translateY(-54%) scale(1.01);transform:translateY(-54%) scale(1.01);}}
+@-webkit-keyframes shiba-wink-open{0%{opacity:1;}6%{opacity:1;}7%{opacity:0;}12%{opacity:0;}13%{opacity:1;}100%{opacity:1;}}
+@keyframes shiba-wink-open{0%{opacity:1;}6%{opacity:1;}7%{opacity:0;}12%{opacity:0;}13%{opacity:1;}100%{opacity:1;}}
+@-webkit-keyframes shiba-wink-closed{0%{opacity:0;}6%{opacity:0;}7%{opacity:1;}12%{opacity:1;}13%{opacity:0;}100%{opacity:0;}}
+@keyframes shiba-wink-closed{0%{opacity:0;}6%{opacity:0;}7%{opacity:1;}12%{opacity:1;}13%{opacity:0;}100%{opacity:0;}}
+@-webkit-keyframes shiba-hide{0%{opacity:1;-webkit-transform:translateY(-54%) scale(1);transform:translateY(-54%) scale(1);}100%{opacity:0;-webkit-transform:translateY(0%) scale(0.5);transform:translateY(0%) scale(0.5);}}
+@keyframes shiba-hide{0%{opacity:1;-webkit-transform:translateY(-54%) scale(1);transform:translateY(-54%) scale(1);}100%{opacity:0;-webkit-transform:translateY(0%) scale(0.5);transform:translateY(0%) scale(0.5);}}
+@-webkit-keyframes paw-hide{100%{opacity:0;-webkit-transform:translateY(-65%) scale(0.9);transform:translateY(-65%) scale(0.9);}}
+@keyframes paw-hide{100%{opacity:0;-webkit-transform:translateY(-65%) scale(0.9);transform:translateY(-65%) scale(0.9);}}
