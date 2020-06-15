@@ -4,8 +4,7 @@ const Site = require('./../models/site');
 const auth = require("./../middleware/auth");
 const mongoose = require('mongoose');
 
-
-router.delete('/delSite/:id',  async function (req, res) {
+router.delete('/delSite/:id', auth,  async function (req, res) {
 
   try {
     await Site.deleteOne({ _id: mongoose.Types.ObjectId(req.params.id)});

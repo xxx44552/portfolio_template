@@ -17,7 +17,6 @@ router.get('/api/sites', async function (req, res) {
 });
 
 router.get('/api/info', async function (req, res) {
-
   try{
     let info = await Info.findOne();
     info.image = null;

@@ -11,7 +11,7 @@ export default function Sites(props) {
             <span>{text}</span>
             <a href={link} target='_blank' rel="noopener noreferrer">{link}</a>
             <picture>
-              <img src={`${window.location.origin}/pic/${_id}`} alt='pic'/>
+              <img src={`${window.location.origin}/pic/${_id}/image`} alt='pic'/>
             </picture>
           </div>
         )}

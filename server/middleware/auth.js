@@ -11,13 +11,16 @@ const auth = async(req, res, next) => {
     if (!user) {
       throw new Error()
     }
-
+  console.log(token, '--pass')
     req.user = user;
     req.authToken = token;
     next()
   } catch (e) {
-    console.log(e);
-    res.status(401).send({ error: 'Please authenticate.' })
+    //console.log(e, '---auth-error');
+    console.log(`${req.protocol}//:${req.hostname}:8080/login`);
+    //res.status(401).send({ error: 'Please authenticate.' })
+    //res.redirect(`${req.hostname}:8080/login`)
+    res.redirect(req.body.redirectTo || '/')
   }
 };
 

@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, {useState} from 'react';
 import useFoto from "./customHooks/useFoto";
 
 export default function AdminAddSite(props) {
