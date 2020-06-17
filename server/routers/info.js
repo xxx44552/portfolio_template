@@ -2,9 +2,10 @@ const express = require('express');
 const router = express.Router();
 const Info = require('./../models/info');
 const multer  = require('multer');
+const auth = require("./../middleware/auth");
 const upload = multer();
 
-router.post('/info', upload.single('image'), async function (req, res) {
+router.post('/info', auth, upload.single('image'), async function (req, res) {
 
   if(!req.body) return res.sendStatus(500);
 

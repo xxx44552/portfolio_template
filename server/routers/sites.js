@@ -6,11 +6,9 @@ const multer  = require('multer');
 const upload = multer();
 
 
-router.post('/sites', upload.single('img'), async function (req, res) {
+router.post('/sites', auth, upload.single('img'), async function (req, res) {
 
   if(!req.body) return res.sendStatus(500);
-
-  console.log(req.body)
 
   const {link, text, dev} = req.body;
 

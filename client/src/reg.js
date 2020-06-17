@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from 'react';
+import { useCookies } from 'react-cookie';
+import {useHistory} from "react-router-dom";
 
 export default function Reg() {
 
@@ -6,6 +8,8 @@ export default function Reg() {
   const [password, setPassword] = useState(null);
   const [email, setEmail] = useState(null);
   const [data, setData] = useState([]);
+  const [cookies, setCookie] = useCookies(['jwt']);
+  const history = useHistory();
 
   function reg(e) {
     e.preventDefault();
@@ -16,7 +20,14 @@ export default function Reg() {
         'Content-Type': 'application/json'
       }
     }).then(data => data.json())
-      .then(token => token.token ? localStorage.setItem('webinme', token.token) : console.log("err"))
+      .then(token => {
+        if(token.token) {
+          setCookie('jwt', token.token, { path: '/' });
+          history.push('/admin')
+        }else {
+          console.log("err")
+        }
+      })
       .catch(e => console.log(e))
   }
 

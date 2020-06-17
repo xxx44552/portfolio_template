@@ -15,7 +15,7 @@ const userScheme = new Schema({
     required: true
   },
   dev: {
-    type: String,
+    type: Array,
     required: true
   }
 });

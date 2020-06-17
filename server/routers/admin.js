@@ -1,14 +1,10 @@
 const express = require('express');
+const path = require('path');
 const router = express.Router();
-const Site = require('./../models/site');
 const auth = require("./../middleware/auth");
-const mongoose = require('mongoose');
 
-router.post('/admin', auth, function (req, res) {
-
-  res.sendStatus(200)
-
+router.get('/admin', auth, function (req, res) {
+  res.sendFile(path.join(__dirname, '../../client/build', 'index.html'));
 });
-
 
 module.exports = router;

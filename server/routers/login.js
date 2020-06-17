@@ -15,12 +15,12 @@ router.post('/login', async function (req, res) {
 
     if(isMatch) {
       const token = await user.generateAuthToken();
-      res.send({token});
-    }else {
-      res.status(401).send({ error: 'Please authenticate.' });
+      user.isAdmin ? res.send({token}) : res.status(403).send({ error: 'You must have administrator rights.' })
+    } else {
+      res.status(401).send({ error: 'Wrong password' });
     }
   }catch (e) {
-    res.send({error: true})
+    res.status(401).send({ error: 'Wrong login' });
   }
 });
 

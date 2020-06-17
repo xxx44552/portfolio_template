@@ -1,16 +1,15 @@
 import React, {useState} from 'react';
 import useFoto from "./customHooks/useFoto";
+import setSkills from "./customHooks/setSkills";
 
 export default function AdminSite(props) {
 
   const {item, index} = props;
-
+  const {addDevToArr, dev} = setSkills();
   const [edit, setEdit] = useState(false);
   const [text, setText] = useState(item.text);
   const [link, setLink] = useState(item.link);
-  const [dev, setDev] = useState(item.dev);
   const [showItem, setShowItem] = useState(true);
-  const token = localStorage.getItem('webinme');
 
   const {onChange, file, img, error} = useFoto();
 
@@ -26,9 +25,6 @@ export default function AdminSite(props) {
     fetch(`/editSite/${props.item._id}`, {
       method: 'post',
       body: data,
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
     }).then((res) => console.log(res))
 
   };
@@ -37,9 +33,6 @@ export default function AdminSite(props) {
     console.log(props.item._id)
     fetch(`/delSite/${props.item._id}`, {
       method: 'delete',
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
     }).then(() => console.log('Удаление - ' + props.item._id));
 
     setShowItem(false)
@@ -52,7 +45,8 @@ export default function AdminSite(props) {
       <div className='site-list'>
         <span className='id'>{index}</span>
         <a className='link' href={item.link} target='_blank' rel="noopener noreferrer">{link || item.link.replace(/(^\w+:|^)\/\//, '')}</a>
-        <span className='name'>{text || item.text}</span> <span className='dev'>{dev || item.dev}</span>
+        <span className='name'>{text || item.text}</span>
+        <span className='dev'>{item.dev.map(el=>el) || dev.map(el => el)}===</span>
         <img className='img' src={img || `/pic/${item._id}/image`} alt={item.alt} />
         <span onClick={()=>{setEdit(true)}}>Изменить</span>
         {edit &&
@@ -62,14 +56,20 @@ export default function AdminSite(props) {
           <span>Link</span>
           <input onChange={(e)=>setLink(e.target.value)} name='link' defaultValue={item.link} type='text' /><br />
           <span>Dev</span>
-          <select onChange={(e)=>setDev(e.target.value)} defaultValue={item.dev}>
-            <option value='html'>html</option>
-            <option value='js'>js</option>
-            <option value='wordpress'>wordpress</option>
-            <option value='react'>react</option>
-            <option value='nodejs'>nodejs</option>
-            <option value='mongodb'>mongodb</option>
-          </select>
+          <div className="radio-wrap">
+            <input type='checkbox' onChange={addDevToArr} id={'radio-html' + index} value='html' defaultChecked/>
+            <label htmlFor={'radio-html' + index}>html</label>
+            <input type='checkbox' onChange={addDevToArr} id={'radio-js' + index} value='js'/>
+            <label htmlFor={'radio-js' + index}>js</label>
+            <input type='checkbox' onChange={addDevToArr} id={'radio-wordpress' + index} value='wordpress'/>
+            <label htmlFor={'radio-wordpress' + index}>wordpress</label>
+            <input type='checkbox' onChange={addDevToArr} id={'radio-react' + index} value='react'/>
+            <label htmlFor={'radio-react' + index}>react</label>
+            <input type='checkbox' onChange={addDevToArr} id={'radio-nodejs' + index} value='nodejs'/>
+            <label htmlFor={'radio-nodejs' + index}>nodejs</label>
+            <input type='checkbox' onChange={addDevToArr} id={'radio-mongodb' + index} value='mongodb'/>
+            <label htmlFor={'radio-mongodb' + index}>mongodb</label>
+          </div>
           <p className='error'>{error}</p>
           <div className='del-btn' onClick={delSite}>Удалить</div>
           <input type='submit' value='Сохранить' />

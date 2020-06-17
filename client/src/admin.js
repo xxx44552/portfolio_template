@@ -2,13 +2,11 @@ import React, {useState, useEffect} from 'react';
 import AdminSite from "./adminSite";
 import AdminAddSite from "./adminAddSite";
 import AdminInfo from "./adminInfo";
-import {useHistory} from 'react-router-dom';
 
 export default function Admin() {
 
   const [data, setData] = useState([]);
   const [info, setInfo] = useState([]);
-  const token = localStorage.getItem('webinme');
 
   const getSites = () => {
     fetch('/api/sites')
@@ -25,14 +23,6 @@ export default function Admin() {
   useEffect(function () {
     getSites();
     getInfo();
-    fetch('/admin', {
-      method: 'post',
-      headers: {
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
-    }).then(res => res.json()).then(data => console.log(data))
   }, []);
 
   function changeData(data = {}){
@@ -42,7 +32,6 @@ export default function Admin() {
   }
   return (
     <React.Fragment>
-      {console.log(token)}
       <div className='admin-wrap'>
         <input type='checkbox' id='flag' />
         <label htmlFor="flag" className='flag'></label>

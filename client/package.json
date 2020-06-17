@@ -12,9 +12,10 @@
     "nodemailer": "^6.2.1",
     "nodemon": "^1.19.1",
     "react": "^16.8.6",
+    "react-cookie": "^4.0.3",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "3.0.0",
+    "react-scripts": "^3.4.1",
     "react-style-reset": "^1.2.5"
   },
   "scripts": {

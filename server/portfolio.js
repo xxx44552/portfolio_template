@@ -11,10 +11,16 @@ const deleteSiteRouter = require("./routers/deleteSite");
 const editSiteRouter = require("./routers/editSite");
 const info = require("./routers/info");
 const admin = require("./routers/admin");
+const cookieParser = require('cookie-parser');
+
+
+
 
 const app = express();
 app.use(express.json({limit: '5mb'}));
 app.use(express.static(path.join(__dirname, '../client/build')));
+
+app.use(cookieParser())
 
 require('./mongoose');
 
