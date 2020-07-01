@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import useFoto from "./customHooks/useFoto";
 import setSkills from "./customHooks/setSkills";
+import DevHtml from "./components/devHtml";
 
 export default function AdminAddSite(props) {
 
@@ -17,6 +18,8 @@ export default function AdminAddSite(props) {
     data.append('link', link);
     data.append('text', text);
     data.append('dev', dev);
+
+    console.log(dev, '---')
 
 
     if(!link || !file || !text || !dev) {
@@ -42,20 +45,7 @@ export default function AdminAddSite(props) {
       <input name='img' onChange={onChange} type='file' /><br /> <span>Text</span>
       <textarea onChange={(e)=>setText(e.target.value)} value={text} name='name'></textarea><br /> <span>Link</span>
       <input onChange={(e)=>setLink(e.target.value)} value={link} name='link' type='text' /><br /> <span>Dev</span>
-      <div className="radio-wrap">
-        <input type='checkbox' onChange={addDevToArr} id='radio-html' value='html' defaultChecked/>
-        <label htmlFor='radio-html'>html</label>
-        <input type='checkbox' onChange={addDevToArr} id='radio-js' value='js'/>
-        <label htmlFor='radio-js'>js</label>
-        <input type='checkbox' onChange={addDevToArr} id='radio-wordpress' value='wordpress'/>
-        <label htmlFor='radio-wordpress'>wordpress</label>
-        <input type='checkbox' onChange={addDevToArr} id='radio-react' value='react'/>
-        <label htmlFor='radio-react'>react</label>
-        <input type='checkbox' onChange={addDevToArr} id='radio-nodejs' value='nodejs'/>
-        <label htmlFor='radio-nodejs'>nodejs</label>
-        <input type='checkbox' onChange={addDevToArr} id='radio-mongodb' value='mongodb'/>
-        <label htmlFor='radio-mongodb'>mongodb</label>
-      </div>
+      <DevHtml func={addDevToArr} arr={['html']}/>
       {setErrorFields ? <p className='error'>{errorFields}</p> : null}
       <input type='submit' value='Отправить' />
     </form>

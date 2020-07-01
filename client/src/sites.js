@@ -6,8 +6,9 @@ export default function Sites(props) {
       <h2>{props.dev || 'Все'}</h2>
       <div className='sites'>
         {props.data.map(({text, dev, link, _id}, i) =>
-          dev === props.dev &&
+          dev.join().split(',').includes(props.dev) &&
           <div className='site' key={i}>
+            {console.log(dev)}
             <span>{text}</span>
             <a href={link} target='_blank' rel="noopener noreferrer">{link}</a>
             <picture>

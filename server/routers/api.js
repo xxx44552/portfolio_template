@@ -20,10 +20,9 @@ router.get('/api/info', async function (req, res) {
   try{
     let info = await Info.findOne();
     info.image = null;
-    console.log(info)
     res.send(info)
   }catch (e) {
-    res.sendStatus(500)
+    res.send({"error": true})
   }
 });
 

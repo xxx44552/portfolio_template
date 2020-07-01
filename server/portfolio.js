@@ -9,6 +9,7 @@ const apiRouter = require("./routers/api");
 const image = require("./routers/image");
 const deleteSiteRouter = require("./routers/deleteSite");
 const editSiteRouter = require("./routers/editSite");
+const mail = require("./routers/mail");
 const info = require("./routers/info");
 const admin = require("./routers/admin");
 const cookieParser = require('cookie-parser');
@@ -36,6 +37,7 @@ app.use(deleteSiteRouter);
 app.use(editSiteRouter);
 app.use(info);
 app.use(admin);
+app.use(mail);
 
 app.get("/*", function(req, res){
   res.sendFile(path.join(__dirname, '../client/build', 'index.html'));

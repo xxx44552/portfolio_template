@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import useFoto from "./customHooks/useFoto";
 import setSkills from "./customHooks/setSkills";
+import DevHtml from "./components/devHtml";
 
-export default function AdminSite(props) {
+export default function AdminEditSite(props) {
 
   const {item, index} = props;
   const {addDevToArr, dev} = setSkills();
@@ -10,7 +11,6 @@ export default function AdminSite(props) {
   const [text, setText] = useState(item.text);
   const [link, setLink] = useState(item.link);
   const [showItem, setShowItem] = useState(true);
-
   const {onChange, file, img, error} = useFoto();
 
   const editSite = (e) => {
@@ -21,7 +21,7 @@ export default function AdminSite(props) {
     data.append('text', text);
     data.append('dev', dev);
 
-
+    console.log(dev, '---send')
     fetch(`/editSite/${props.item._id}`, {
       method: 'post',
       body: data,
@@ -46,7 +46,7 @@ export default function AdminSite(props) {
         <span className='id'>{index}</span>
         <a className='link' href={item.link} target='_blank' rel="noopener noreferrer">{link || item.link.replace(/(^\w+:|^)\/\//, '')}</a>
         <span className='name'>{text || item.text}</span>
-        <span className='dev'>{item.dev.map(el=>el) || dev.map(el => el)}===</span>
+        <span className='dev'>{item.dev}</span>
         <img className='img' src={img || `/pic/${item._id}/image`} alt={item.alt} />
         <span onClick={()=>{setEdit(true)}}>Изменить</span>
         {edit &&
@@ -56,20 +56,7 @@ export default function AdminSite(props) {
           <span>Link</span>
           <input onChange={(e)=>setLink(e.target.value)} name='link' defaultValue={item.link} type='text' /><br />
           <span>Dev</span>
-          <div className="radio-wrap">
-            <input type='checkbox' onChange={addDevToArr} id={'radio-html' + index} value='html' defaultChecked/>
-            <label htmlFor={'radio-html' + index}>html</label>
-            <input type='checkbox' onChange={addDevToArr} id={'radio-js' + index} value='js'/>
-            <label htmlFor={'radio-js' + index}>js</label>
-            <input type='checkbox' onChange={addDevToArr} id={'radio-wordpress' + index} value='wordpress'/>
-            <label htmlFor={'radio-wordpress' + index}>wordpress</label>
-            <input type='checkbox' onChange={addDevToArr} id={'radio-react' + index} value='react'/>
-            <label htmlFor={'radio-react' + index}>react</label>
-            <input type='checkbox' onChange={addDevToArr} id={'radio-nodejs' + index} value='nodejs'/>
-            <label htmlFor={'radio-nodejs' + index}>nodejs</label>
-            <input type='checkbox' onChange={addDevToArr} id={'radio-mongodb' + index} value='mongodb'/>
-            <label htmlFor={'radio-mongodb' + index}>mongodb</label>
-          </div>
+          <DevHtml func={addDevToArr} arr={item.dev.join().split(',')} i={index}/>
           <p className='error'>{error}</p>
           <div className='del-btn' onClick={delSite}>Удалить</div>
           <input type='submit' value='Сохранить' />

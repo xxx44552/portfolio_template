@@ -9,6 +9,8 @@ const upload = multer();
 
 router.post('/editSite/:id', auth, upload.single('image'),  async function (req, res) {
 
+    console.log(req.body)
+
     const updates = Object.keys(req.body).filter(i=>req.body[i] !== null).filter(el=>el!=='image');
     console.log(updates)
     const allowedUpdates = ['link', 'text', 'dev'];

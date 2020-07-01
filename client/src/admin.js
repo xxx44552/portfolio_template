@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import AdminSite from "./adminSite";
+import AdminEditSite from "./adminEditSite";
 import AdminAddSite from "./adminAddSite";
 import AdminInfo from "./adminInfo";
 
@@ -15,9 +15,9 @@ export default function Admin() {
   }
 
   const getInfo = () => {
-    fetch('/info')
+    fetch('/api/info')
       .then(response => response.json())
-      .then(response => setInfo(response));
+      .then(data => setInfo(data));
   }
 
   useEffect(function () {
@@ -40,7 +40,7 @@ export default function Admin() {
           <div className="admin-list">
             <AdminAddSite onChange = {data => {changeData(data)}}/>
             {data.map((item, i) =>
-               <AdminSite item={item} index={i+1} key={i} />
+               <AdminEditSite item={item} index={i+1} key={i} />
             )}
           </div>
         </div>

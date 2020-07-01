@@ -25,6 +25,11 @@ const infoScheme = new Schema({
   adminAbout: {
     type: String,
     required: true
+  },
+  title: {
+    type: String,
+    required: true,
+    default: 'Titlee'
   }
 });
 

@@ -12,6 +12,7 @@ export default function Feedback(props) {
     const [errEmail, setErrEmail] = useState(false);
     const [errMess, setErrMess] = useState(false);
     const [sendLoader, setSendLoader] = useState(false);
+    const [sendText, setSendText] = useState('Сообщение отправлено');
 
     const validateEmail = (email) => /\S+@\S+\.\S+/.test(email);
 
@@ -53,29 +54,33 @@ export default function Feedback(props) {
     };
 
     const sendForm = (e) => {
-    e.preventDefault();
+      e.preventDefault();
 
-    if(validation()) {
-      return;
-    };
+      if(validation()) {
+        return;
+      };
 
-    const form = {
-      fbName: fbName,
-      fbEmail: fbEmail,
-      fbMess: fbMess
-    };
+      const form = {
+        fbName: fbName,
+        fbEmail: fbEmail,
+        fbMess: fbMess
+      };
 
 
-    fetch('/mail', {
-      method: 'post',
-      body: JSON.stringify(form),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }).then(() => {
-      setStatus(true);
-      console.log(JSON.stringify(form))
-    })
+      fetch('/mail', {
+        method: 'post',
+        body: JSON.stringify(form),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(res => {
+        console.log(res)
+        if (res.status === 200) setStatus(true);
+        else {
+          setStatus(true);
+          setSendText('Ошибка');
+        };
+      })
   };
 
     return (
@@ -85,7 +90,7 @@ export default function Feedback(props) {
           <div className="anim-wrap">
             {
               status ?
-                  <p>Сообщение отправлено</p>
+                  <p>{sendText}</p>
                   :
                   <>
                     <h2>Feedback</h2>
