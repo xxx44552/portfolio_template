@@ -2,11 +2,13 @@ import React, {useState, useEffect} from 'react';
 import AdminEditSite from "./adminEditSite";
 import AdminAddSite from "./adminAddSite";
 import AdminInfo from "./adminInfo";
+import {useHistory} from 'react-router-dom';
 
 export default function Admin() {
 
   const [data, setData] = useState([]);
   const [info, setInfo] = useState([]);
+  const history = useHistory();
 
   const getSites = () => {
     fetch('/api/sites')
@@ -18,16 +20,17 @@ export default function Admin() {
     fetch('/api/info')
       .then(response => response.json())
       .then(data => setInfo(data));
-  }
+  };
+
+  const logout = () => fetch('/logout').then(res => res.redirected && history.push('/login'));
 
   useEffect(function () {
     getSites();
     getInfo();
   }, []);
 
-  function changeData(data = {}){
-    let newStateData = data;
-    newStateData.push(data);
+  function changeData(t){
+    let newStateData = [...data].concat(t);
     setData(newStateData);
   }
   return (
@@ -35,10 +38,10 @@ export default function Admin() {
       <div className='admin-wrap'>
         <input type='checkbox' id='flag' />
         <label htmlFor="flag" className='flag'></label>
-        <a href='/logout' className='logout'>Выйти</a>
+        <div onClick={logout} className='logout'>Выйти</div>
         <div className='admin-scroll'>
           <div className="admin-list">
-            <AdminAddSite onChange = {data => {changeData(data)}}/>
+            <AdminAddSite func={changeData}/>
             {data.map((item, i) =>
                <AdminEditSite item={item} index={i+1} key={i} />
             )}

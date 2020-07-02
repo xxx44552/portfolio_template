@@ -5,7 +5,7 @@ import DevHtml from "./components/devHtml";
 
 export default function AdminAddSite(props) {
 
-  const {onChange, img, error, file} = useFoto();
+  const {onChange, img, error, file, setImg} = useFoto();
   const {addDevToArr, dev} = setSkills();
   const [link, setLink] = useState('');
   const [text, setText] = useState('');
@@ -13,13 +13,14 @@ export default function AdminAddSite(props) {
 
   const addSite = (e) => {
     e.preventDefault();
+    const formEl = e.target;
     const data = new FormData();
     data.append('img', file);
     data.append('link', link);
     data.append('text', text);
     data.append('dev', dev);
 
-    console.log(dev, '---')
+    console.log(e.target)
 
 
     if(!link || !file || !text || !dev) {
@@ -32,10 +33,11 @@ export default function AdminAddSite(props) {
       body: data,
     }).then(res => res.json())
       .then(data => {
-        if(data.error) {
-          console.log(data.error)
-        }
+        props.func(data);
+        setImg(null)
+        formEl.reset()
       })
+
   };
 
   return (
@@ -43,8 +45,8 @@ export default function AdminAddSite(props) {
       <img  src={img} className='add-site-img' alt=""/>
       <p className='error'>{error}</p>
       <input name='img' onChange={onChange} type='file' /><br /> <span>Text</span>
-      <textarea onChange={(e)=>setText(e.target.value)} value={text} name='name'></textarea><br /> <span>Link</span>
-      <input onChange={(e)=>setLink(e.target.value)} value={link} name='link' type='text' /><br /> <span>Dev</span>
+      <textarea onChange={(e)=>setText(e.target.value)}  name='name'></textarea><br /> <span>Link</span>
+      <input onChange={(e)=>setLink(e.target.value)}  name='link' type='text' /><br /> <span>Dev</span>
       <DevHtml func={addDevToArr} arr={['html']}/>
       {setErrorFields ? <p className='error'>{errorFields}</p> : null}
       <input type='submit' value='Отправить' />

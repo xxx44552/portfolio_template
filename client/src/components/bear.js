@@ -5,17 +5,17 @@ const bear = <div className="MochiShiba / medium / excited / eyes open / ears l1
     <title>Mochi Shiba</title>
     <defs>
       <radialGradient id="cheeks" cx="105.52" cy="57.11" r="6.94" gradientTransform="translate(3.23 14.14) rotate(4.8) scale(1 0.6)" gradientUnits="userSpaceOnUse">
-        <stop offset="0" stop-color="#ff90ac"></stop>
-        <stop offset="0.26" stop-color="#ff90ac" stop-opacity="0.99"></stop>
-        <stop offset="0.4" stop-color="#fe91ac" stop-opacity="0.96"></stop>
-        <stop offset="0.51" stop-color="#fe92ac" stop-opacity="0.91"></stop>
-        <stop offset="0.6" stop-color="#fd93ac" stop-opacity="0.83"></stop>
-        <stop offset="0.68" stop-color="#fc95ac" stop-opacity="0.73"></stop>
-        <stop offset="0.76" stop-color="#fa97ac" stop-opacity="0.61"></stop>
-        <stop offset="0.83" stop-color="#f89aad" stop-opacity="0.47"></stop>
-        <stop offset="0.9" stop-color="#f69dad" stop-opacity="0.3"></stop>
-        <stop offset="0.96" stop-color="#f4a1ad" stop-opacity="0.12"></stop>
-        <stop offset="1" stop-color="#f2a3ad" stop-opacity="0"></stop>
+        <stop offset="0" stopColor="#ff90ac"></stop>
+        <stop offset="0.26" stopColor="#ff90ac" stopOpacity="0.99"></stop>
+        <stop offset="0.4" stopColor="#fe91ac" stopOpacity="0.96"></stop>
+        <stop offset="0.51" stopColor="#fe92ac" stopOpacity="0.91"></stop>
+        <stop offset="0.6" stopColor="#fd93ac" stopOpacity="0.83"></stop>
+        <stop offset="0.68" stopColor="#fc95ac" stopOpacity="0.73"></stop>
+        <stop offset="0.76" stopColor="#fa97ac" stopOpacity="0.61"></stop>
+        <stop offset="0.83" stopColor="#f89aad" stopOpacity="0.47"></stop>
+        <stop offset="0.9" stopColor="#f69dad" stopOpacity="0.3"></stop>
+        <stop offset="0.96" stopColor="#f4a1ad" stopOpacity="0.12"></stop>
+        <stop offset="1" stopColor="#f2a3ad" stopOpacity="0"></stop>
       </radialGradient>
       <radialGradient id="cheeks-2" data-name="cheeks" cx="46.94" cy="57.11" r="6.94" gradientTransform="translate(77.16 7.47) rotate(85.2) scale(1 0.6)" xlinkHref="#cheeks"></radialGradient>
     </defs>

@@ -12,6 +12,7 @@ const editSiteRouter = require("./routers/editSite");
 const mail = require("./routers/mail");
 const info = require("./routers/info");
 const admin = require("./routers/admin");
+const logout = require("./routers/logout");
 const cookieParser = require('cookie-parser');
 
 
@@ -19,7 +20,7 @@ const cookieParser = require('cookie-parser');
 
 const app = express();
 app.use(express.json({limit: '5mb'}));
-app.use(express.static(path.join(__dirname, '../client/build')));
+app.use(express.static(path.join(__dirname, './client/build')));
 
 app.use(cookieParser())
 
@@ -38,9 +39,10 @@ app.use(editSiteRouter);
 app.use(info);
 app.use(admin);
 app.use(mail);
+app.use(logout);
 
 app.get("/*", function(req, res){
-  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+  res.sendFile(path.join(__dirname, './client/build', 'index.html'));
 });
 
 app.listen(config.port, function(){

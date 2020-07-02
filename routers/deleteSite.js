@@ -8,10 +8,10 @@ router.delete('/delSite/:id', auth,  async function (req, res) {
 
   try {
     await Site.deleteOne({ _id: mongoose.Types.ObjectId(req.params.id)});
-    res.send(200)
+    res.sendStatus(200)
   }catch (e) {
     console.log(e);
-    res.send(400)
+    res.sendStatus(400)
   }
 
 });
