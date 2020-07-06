@@ -15,9 +15,6 @@ const admin = require("./routers/admin");
 const logout = require("./routers/logout");
 const cookieParser = require('cookie-parser');
 
-
-
-
 const app = express();
 app.use(express.json({limit: '5mb'}));
 app.use(express.static(path.join(__dirname, './client/build')));
@@ -25,8 +22,6 @@ app.use(express.static(path.join(__dirname, './client/build')));
 app.use(cookieParser())
 
 require('./mongoose');
-
-
 
 //routers
 app.use(regRouter);
