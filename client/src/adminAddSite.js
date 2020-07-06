@@ -24,7 +24,7 @@ export default function AdminAddSite(props) {
 
 
     if(!link || !file || !text || !dev) {
-      setErrorFields('Пустые поля ');
+      setErrorFields('Пустые поля');
       return
     }
 

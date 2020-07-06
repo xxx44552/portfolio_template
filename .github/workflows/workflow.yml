@@ -17,5 +17,4 @@ jobs:
           posr: 22
           script: |
             pwd
-            git pull origin master
-            git status
+            npm run build
