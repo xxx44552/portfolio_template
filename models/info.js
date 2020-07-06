@@ -29,7 +29,7 @@ const infoScheme = new Schema({
   title: {
     type: String,
     required: true,
-    default: 'Titlee'
+    default: 'Title'
   }
 });
 
