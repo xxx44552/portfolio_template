@@ -20,7 +20,7 @@ jobs:
           KEY: ${{secrets.WEBINME_SECRET}}
         with:
           source: "."
-          target: "/home/xxx44552/app"
+          target: "/home/${{secrets.USER_NAME}}/app"
 
       - name: Executing remote command
         uses: appleboy/ssh-action@master
