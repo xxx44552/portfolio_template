@@ -16,21 +16,21 @@ jobs:
         env:
           host: ${{secrets.HOST}}
           USERNAME: ${{secrets.USER_NAME}}
-          PORT: ${{secrets.port}}
+          PORT: ${{secrets.PORT}}
           KEY: ${{secrets.WEBINME_SECRET}}
         with:
           source: "."
-          target: "/home/xxx44552/app"
+          target: "/home/${{secrets.USER_NAME}}/app"
 
       - name: Executing remote  command
         uses: appleboy/ssh-action@master
         with:
           host: ${{secrets.HOST}}
           USERNAME: ${{secrets.USER_NAME}}
-          PORT: ${{secrets.port}}
+          PORT: ${{secrets.PORT}}
           KEY: ${{secrets.WEBINME_SECRET}}
           script: |
-            cd /home/xxx44552/app
+            cd /home/${{secrets.USER_NAME}}/app
             npm i
             cd client
             npm i
