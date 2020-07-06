@@ -14,8 +14,7 @@ jobs:
           host: webinme.ru
           username: xxx44552
           key: ${{secrets.WEBINME_SECRET}}
-          posr: 22
+          port: 22
           script: |
             cd portfolio_template
-            git pull origin master
             echo "yes" > test.txt
