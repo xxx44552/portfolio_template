@@ -15,9 +15,9 @@ jobs:
         uses: appleboy/scp-action@master
         env:
           host: webinme.ru
-          USERNAME: xxx44552
-          PORT: 22
-          KEY: ${{secrets.WEBINME_SECRET}}
+          username: xxx44552
+          port: 22
+          key: ${{secrets.WEBINME_SECRET}}
         with:
           source: "."
           target: "/home/xxx44552/app"
@@ -26,9 +26,9 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: webinme.ru
-          USERNAME: xxx44552
-          PORT: 22
-          KEY: ${{secrets.WEBINME_SECRET}}
+          username: xxx44552
+          port: 22
+          key: ${{secrets.WEBINME_SECRET}}
           script: |
             cd /home/${{secrets.USER_NAME}}/app
             npm i
