@@ -99,7 +99,7 @@ export default function Feedback(props) {
                       <input type='text' onChange={(e)=> setFbName(e.target.value)} name='fbName' placeholder='Name' required/>
                     </div>
                     <div className="section">
-                      {errEmail ? <span className='error'>Неверная почта</span> : false}
+                      {errEmail ? <span className='error'>Неверная почта </span> : false}
                       <input type='email' onChange={(e)=> setFbEmail(e.target.value)} name='fbEmail' placeholder='Email' required/>
                     </div>
                     <div className="section">
