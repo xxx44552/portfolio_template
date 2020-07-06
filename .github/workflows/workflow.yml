@@ -9,13 +9,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v1
+
+      - name: Copy file via scp
+        uses: appleboy/scp-action@master
+        env:
+          host: ${{secrets.HOST}}
+          USERNAME: ${{secrets.USER_NAME}}
+          PORT: ${{secrets.PORT}}
+          KEY: ${{secrets.WEBINME_SECRET}}
+        with:
+          source: "."
+          target: "/home/${{secrets.USER_NAME}}/app"
+
       - name: Executing remote command
         uses: appleboy/ssh-action@master
         with:
-          host: webinme.ru
-          USERNAME: xxx44552
-          PORT: 22
+          host: ${{secrets.HOST}}
+          USERNAME: ${{secrets.USER_NAME}}
+          PORT: ${{secrets.PORT}}
           KEY: ${{secrets.WEBINME_SECRET}}
           script: |
-            echo "${{secrets.WEBINME_SECRET}} --- ${{secrets.PORT}} --- ${{secrets.USER_NAME}} --- ${{secrets.HOST}}" > test.txt
+            cd /home/${{secrets.USER_NAME}}/app
+            npm i
+            cd client
+            npm i
+            npm run build
+            mv build ../
+            rm -rf src
             
