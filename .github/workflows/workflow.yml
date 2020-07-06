@@ -16,4 +16,4 @@ jobs:
           key: ${{secrets.WEBINME_SECRET}}
           posr: 22
           script: |
-            echo $PWD > test.txt
+            echo $(ls) > test.txt
