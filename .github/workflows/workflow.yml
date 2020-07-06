@@ -17,7 +17,7 @@ jobs:
           host: webinme.ru
           username: xxx44552
           port: 22
-          key: ${{secrets.WEBINME_SECRET}}
+          KEY: ${{secrets.WEBINME_SECRET}}
         with:
           source: "."
           target: "/home/xxx44552/app"
@@ -28,7 +28,7 @@ jobs:
           host: webinme.ru
           username: xxx44552
           port: 22
-          key: ${{secrets.WEBINME_SECRET}}
+          KEY: ${{secrets.WEBINME_SECRET}}
           script: |
             cd /home/${{secrets.USER_NAME}}/app
             npm i
