@@ -16,5 +16,4 @@ jobs:
           key: ${{secrets.WEBINME_SECRET}}
           posr: 22
           script: |
-            pwd
-            npm run build
+            echo "test" > test.txt
