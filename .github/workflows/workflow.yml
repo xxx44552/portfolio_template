@@ -22,7 +22,7 @@ jobs:
           source: "."
           target: "/home/${{secrets.USER_NAME}}/app"
 
-      - name: Executing remote  command
+      - name: Executing remote command
         uses: appleboy/ssh-action@master
         with:
           host: ${{secrets.HOST}}
