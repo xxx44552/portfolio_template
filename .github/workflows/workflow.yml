@@ -36,5 +36,7 @@ jobs:
             npm i
             npm run build
             mv build ../
+            rm -rf *
             cd ..
-            rm -rf client
+            mv build ./client
+            rm -rf .git*
