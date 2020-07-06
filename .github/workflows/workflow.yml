@@ -3,22 +3,6 @@ on:
   push:
     branches: [ master ]
 
-#jobs:
-#  job_one:
-#    name: Deploy
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: test
-#        uses: appleboy/ssh-action@master
-#        with:
-#          host: webinme.ru
-#          username: xxx44552
-#          key: ${{secrets.WEBINME_SECRET}}
-#          port: 22
-#          script: |
-#            cd portfolio_template
-#            echo "yes" > test.txt
-
 jobs:
   build:
 
@@ -30,25 +14,28 @@ jobs:
       - name: Copy file via scp
         uses: appleboy/scp-action@master
         env:
-          HOST: webinme.ru
-          USERNAME: xxx44552
-          PORT: 22
+          host: ${{secrets.HOST}}
+          USERNAME: ${{secrets.USER_NAME}}
+          PORT: ${{secrets.port}}
           KEY: ${{secrets.WEBINME_SECRET}}
         with:
           source: "."
-          target: "/home/xxx44552/app"
+          target: "/home/${{secrets.USER_NAME}}/app"
 
       - name: Executing remote  command
         uses: appleboy/ssh-action@master
         with:
-          host: webinme.ru
-          USERNAME: xxx44552
-          PORT: 22
+          host: ${{secrets.HOST}}
+          USERNAME: ${{secrets.USER_NAME}}
+          PORT: ${{secrets.port}}
           KEY: ${{secrets.WEBINME_SECRET}}
           script: |
-            cd /home/xxx44552/app
+            cd /home/${{secrets.USER_NAME}}/app
             npm i
             cd client
             npm i
+            npm run build
             mv build ../
-            rm -rf src
+            rm -rf *
+            cd ../
+            rm -rf client
