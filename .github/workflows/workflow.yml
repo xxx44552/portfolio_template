@@ -30,7 +30,7 @@ jobs:
           PORT: ${{secrets.port}}
           KEY: ${{secrets.WEBINME_SECRET}}
           script: |
-            cd /home/${{secrets.USER_NAME}}/app
+            cd /home/xxx44552/app
             npm i
             cd client
             npm i
