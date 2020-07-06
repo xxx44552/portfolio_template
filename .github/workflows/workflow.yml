@@ -21,7 +21,6 @@ jobs:
         with:
           source: "."
           target: "/var/www/${{secrets.USER_NAME}}/public"
-          rm: true
 
       - name: Executing remote command
         uses: appleboy/ssh-action@master
