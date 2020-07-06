@@ -16,5 +16,4 @@ jobs:
           key: ${{secrets.WEBINME_SECRET}}
           posr: 22
           script: |
-            cd portfolio_template
-            npm i
+            echo $PWD > test.txt
