@@ -21,7 +21,7 @@ jobs:
         with:
           rm: true
           source: "."
-          target: "/var/www/${{secrets.WEBINME_SECRET}}/public"
+          target: "/var/www/webinme.ru/public"
 
       - name: Executing remote command
         uses: appleboy/ssh-action@master
