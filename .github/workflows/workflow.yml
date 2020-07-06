@@ -16,4 +16,6 @@ jobs:
           key: ${{secrets.WEBINME_SECRET}}
           posr: 22
           script: |
-            echo $(ls) > test.txt
+            cd portfolio_template
+            git pull origin master
+            echo "yes" > test.txt
