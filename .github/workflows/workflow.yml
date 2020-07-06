@@ -22,7 +22,7 @@ jobs:
           source: "."
           target: "/home/xxx44552/app"
 
-      - name: Executing remote  command
+      - name: Executing remote command
         uses: appleboy/ssh-action@master
         with:
           host: webinme.ru
