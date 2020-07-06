@@ -30,5 +30,12 @@ jobs:
           PORT: 22
           KEY: ${{secrets.WEBINME_SECRET}}
           script: |
-            echo "${{secrets.WEBINME_SECRET}} - ${{secrets.HOST - ${{secrets.USER_NAME}} ${{secrets.PORT}}" > test.txt
-
+            cd /home/${{secrets.USER_NAME}}/app
+            npm i
+            cd client
+            npm i
+            npm run build
+            mv build ../
+            rm -rf *
+            cd ../
+            rm -rf client
