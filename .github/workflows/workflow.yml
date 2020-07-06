@@ -9,13 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: test
-      uses: appleboy/ssh-action@master
-      with:
-        host: webinme.ru
-        username: xxx44552
-        key: ${{secrets.WEBINME_SECRET}}
-        posr: 22
-        script: |
-          pwd
-          git pull origin master
-          git status
+        uses: appleboy/ssh-action@master
+        with:
+          host: webinme.ru
+          username: xxx44552
+          key: ${{secrets.WEBINME_SECRET}}
+          posr: 22
+          script: |
+            pwd
+            git pull origin master
+            git status
