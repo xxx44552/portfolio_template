@@ -23,7 +23,7 @@ jobs:
           source: "."
           target: "/var/www/${{secrets.WEBINME_SECRET}}/public"
 
-      - name: Executing  remote command
+      - name: Executing remote command
         uses: appleboy/ssh-action@master
         with:
           host: ${{secrets.HOST}}
