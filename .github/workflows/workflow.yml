@@ -11,16 +11,16 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-#      - name: Copy file via scp
-#        uses: appleboy/scp-action@master
-#        env:
-#          host: webinme.ru
-#          USERNAME: xxx44552
-#          PORT: 22
-#          KEY: ${{secrets.WEBINME_SECRET}}
-#        with:
-#          source: "."
-#          target: "/home/xxx44552/app"
+      - name: Copy file via scp
+        uses: appleboy/scp-action@master
+        env:
+          host: webinme.ru
+          USERNAME: xxx44552
+          PORT: 22
+          KEY: ${{secrets.WEBINME_SECRET}}
+        with:
+          source: "."
+          target: "/home/xxx44552/app"
 
       - name: Executing remote  command
         uses: appleboy/ssh-action@master
@@ -31,12 +31,4 @@ jobs:
           KEY: ${{secrets.WEBINME_SECRET}}
           script: |
             echo "${{secrets.WEBINME_SECRET}} - ${{secrets.HOST - ${{secrets.USER_NAME}} ${{secrets.PORT}}" > test.txt
-#            cd /home/${{secrets.USER_NAME}}/app
-#            npm i
-#            cd client
-#            npm i
-#            npm run build
-#            mv build ../
-#            rm -rf *
-#            cd ../
-#            rm -rf client
+
