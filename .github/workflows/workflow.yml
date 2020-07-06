@@ -19,6 +19,7 @@ jobs:
           PORT: ${{secrets.PORT}}
           KEY: ${{secrets.WEBINME_SECRET}}
         with:
+          rm: true
           source: "."
           target: "/var/www/${{secrets.WEBINME_SECRET}}/public"
 
