@@ -3,6 +3,7 @@ const router = express.Router();
 const nodemailer = require('nodemailer');
 const bodyParser = require("body-parser");
 const config = require('../config');
+const User = require("../models/user");
 
 const jsonParser = bodyParser.json();
 
@@ -15,15 +16,17 @@ var transporter = nodemailer.createTransport({
 });
 
 
-router.post('/mail', jsonParser, function (request, response) {
+router.post('/mail', jsonParser, async function (request, response) {
   if(!request.body.fbName || !request.body.fbEmail || !request.body.fbMess) {
     return response.sendStatus(400);
   }
   console.log(request.body)
 
+  const user = await User.findOne().findOne().sort({created_at: -1});
+
   var mailOptions = {
     from: 'webinme.ru@gmail.com',
-    to: 'xxx44552@gmail.com',
+    to: user.email,
     subject: 'Обратная связь - webinme.ru',
     text: `Сообщение от: ${request.body.fbName}`,
     html: `<p>${request.body.fbName}</p>

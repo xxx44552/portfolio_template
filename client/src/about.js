@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function About(props) {
-
+  console.log(props.data)
   return (
     <div className='about'>
       <h2>{props.data.adminTitle}</h2>
