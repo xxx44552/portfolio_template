@@ -14,6 +14,7 @@ const info = require("./routers/info");
 const admin = require("./routers/admin");
 const logout = require("./routers/logout");
 const cookieParser = require('cookie-parser');
+const getIp = require("./middleware/getUserIp")
 
 const app = express();
 app.use(express.json({limit: '5mb'}));
@@ -37,7 +38,7 @@ app.use(admin);
 app.use(mail);
 app.use(logout);
 
-app.get("/*", function(req, res){
+app.get("/*", getIp, function(req, res){
   res.sendFile(path.join(__dirname, './client/build', 'index.html'));
 });
 

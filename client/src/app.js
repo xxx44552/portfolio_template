@@ -15,6 +15,7 @@ import Feedback from "./feedback";
 import CssEffects from "./components/cssEffects";
 import Dragon from "./components/dragon";
 import Reg from "./reg";
+import { useCookies } from 'react-cookie';
 
 export default function App() {
 
@@ -22,6 +23,7 @@ export default function App() {
   const [data, setData] = useState([]);
   const [info, setInfo] = useState([]);
   const [dev, setDev] = useState();
+  const [cookies, setCookie] = useCookies();
 
   const update = (value) => {
     setDev(value);
@@ -50,6 +52,7 @@ export default function App() {
   return (
       <BrowserRouter>
         <div className='wrapper'>
+          {console.log(cookies.ip, '  <=-- your ip')}
           <Dragon/>
           <CssEffects/>
           <Sidebar update={update}/>
