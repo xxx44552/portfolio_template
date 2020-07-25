@@ -21,6 +21,7 @@ app.use(express.json({limit: '5mb'}));
 app.use(express.static(path.join(__dirname, './client/build')));
 
 app.use(cookieParser())
+app.set('trust proxy', true)
 
 require('./mongoose');
 
