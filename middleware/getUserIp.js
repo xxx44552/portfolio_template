@@ -1,5 +1,5 @@
 const userIp = async(req, res, next) => {
-  res.cookie('ip', req.ip);
+  res.cookie('ip', req);
   next()
 };
 
